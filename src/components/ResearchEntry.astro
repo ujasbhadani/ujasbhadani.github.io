@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  venue?: string;
+  year?: string;
+  link?: string;
+  group: "published" | "manuscript";
+  abstract: string;
+}
+const { title, venue, year, link, group, abstract } = Astro.props;
+const metaLine =
+  group === "manuscript"
+    ? "Manuscript"
+    : [venue, year].filter(Boolean).join(", ");
+---
+
+<details class="panel">
+  <summary>
+    <span>
+      {title}
+      <span class="panel-meta">{metaLine}</span>
+    </span>
+    <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </summary>
+  <div class="panel-body">
+    <p>{abstract}</p>
+    {link ? <p><a href={link}>Read the paper</a></p> : null}
+  </div>
+</details>

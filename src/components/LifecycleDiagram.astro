@@ -1,0 +1,61 @@
+---
+interface Step {
+  name: string;
+  sentence: string;
+  artifact: string;
+}
+interface Props {
+  steps: Step[];
+}
+const { steps } = Astro.props;
+---
+
+<div class="lifecycle-wrap" style="position: relative;">
+  <svg
+    class="lifecycle-svg lifecycle-svg-desktop"
+    viewBox="0 0 100 100"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <line x1="0" y1="14" x2="100" y2="14" stroke="var(--accent)" stroke-width="0.6" />
+  </svg>
+  <svg
+    class="lifecycle-svg lifecycle-svg-mobile"
+    viewBox="0 0 100 100"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <line x1="3" y1="0" x2="3" y2="100" stroke="var(--accent)" stroke-width="0.6" />
+  </svg>
+  <ol class="lifecycle">
+    {steps.map((step, i) => (
+      <li class="lifecycle-step">
+        <span class="lifecycle-step-number" aria-hidden="true">{i + 1}</span>
+        <h3>{step.name}</h3>
+        <p class="small">{step.sentence}</p>
+        <p class="lifecycle-artifact">Artifact: {step.artifact}</p>
+      </li>
+    ))}
+  </ol>
+</div>
+
+<style>
+  .lifecycle-svg-desktop {
+    display: none;
+  }
+  .lifecycle-svg-mobile {
+    display: none;
+  }
+  @media (min-width: 901px) {
+    .lifecycle-svg-desktop {
+      display: block;
+    }
+  }
+  @media (max-width: 900px) {
+    .lifecycle-svg-mobile {
+      display: block;
+    }
+  }
+</style>

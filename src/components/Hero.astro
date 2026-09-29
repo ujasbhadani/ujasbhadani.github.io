@@ -1,0 +1,58 @@
+---
+const phrases = [
+  "SOX 404(b) ITGC lead",
+  "Security and GRC engineer",
+  "Founder, Crescive.ai",
+  "Building AI for GRC",
+];
+---
+
+<section id="top">
+  <div class="hero">
+    <img
+      class="hero-photo"
+      src="/assets/img/profile-img.jpg"
+      alt="Ujas Bhadani"
+      width="160"
+      height="160"
+    />
+    <div>
+      <h1>Ujas Bhadani</h1>
+      <p class="hero-role">
+        <span id="hero-role-text" class="hero-role-text" data-phrases={JSON.stringify(phrases)}>
+          {phrases[0]}
+        </span>
+      </p>
+      <p class="hero-sub">
+        I run IT general controls programs that pass Big 4 audit, and I build AI that makes that work faster and more defensible.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const el = document.getElementById("hero-role-text");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (el && !reduceMotion) {
+    const phrases: string[] = JSON.parse(el.getAttribute("data-phrases") || "[]");
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % phrases.length;
+      el.style.opacity = "0";
+      el.style.transform = "translateY(4px)";
+      window.setTimeout(() => {
+        el.textContent = phrases[index];
+        el.style.transition = "none";
+        el.style.opacity = "0";
+        el.style.transform = "translateY(-4px)";
+        // Force reflow so the fade-in transition actually runs.
+        void el.offsetWidth;
+        el.style.transition = "opacity 380ms ease-out, transform 380ms ease-out";
+        el.style.opacity = "1";
+        el.style.transform = "translateY(0)";
+      }, 260);
+    }, 2600);
+  }
+</script>

@@ -1,0 +1,16 @@
+# Ujas Bhadani
+
+> Security and GRC engineer. SOX 404(b) ITGC lead at Xponential Fitness, Inc. (Deloitte-audited). Founder of Vasan AI Technologies, LLC, the company behind Crescive.ai, an AI-agent-based Answer Engine Optimization platform.
+
+Key facts:
+- Leads the SOX 404(b) IT general controls program at Xponential Fitness; the most recent audit year closed with every prior-year deficiency remediated and a no-material-weakness opinion.
+- Moved SOX evidence collection into AuditBoard (now Optro), cutting retrieval time 35%.
+- Founder of Vasan AI Technologies, LLC (vasan.ai); Crescive (crescive.ai) is its product.
+- M.S. Cybersecurity and GRC, Northeastern University. Certifications: CISSP, CRISC, AWS Solutions Architect Associate, RHCE, RHCSA, CCNA, CompTIA Security+.
+- Writes about AI in GRC: auditing AI controls, applying ITGCs to AI agents.
+
+## Pages
+- [Home](https://ujasbhadani.com/)
+- [SOX 404(b) case study](https://ujasbhadani.com/work/sox-404b-itgc/)
+- [Crescive case study](https://ujasbhadani.com/work/crescive/)
+- [Contact](https://ujasbhadani.com/#contact): contact@ujasbhadani.com
