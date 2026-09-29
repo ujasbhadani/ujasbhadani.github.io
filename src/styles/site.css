@@ -243,7 +243,7 @@ a {
   letter-spacing: normal;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 899px) {
   .rail {
     display: none;
   }
@@ -496,7 +496,7 @@ p {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 899px) {
   .lifecycle {
     display: flex;
     flex-direction: column;
@@ -527,7 +527,7 @@ p {
   justify-content: center;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 899px) {
   .lifecycle-step-number {
     position: absolute;
     left: calc(-1 * var(--space-6) - 14px);

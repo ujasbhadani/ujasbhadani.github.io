@@ -295,7 +295,7 @@ joined. The duplicated "Weaponizing Phase" entry is collapsed to one (S2).
 
 **Published**
 1. Smart Grids: A Cyber–Physical Systems Perspective · IRJET, Vol. 11, Issue 6, 2024 · https://www.irjet.net/archives/V11/i6/IRJET-V11I6117.pdf
-2. Weaponizing Phase: Living Off the Land Technique · Hakin9 · https://hakin9.org/product/weaponization-unveiled-navigating-stage-two/
+2. Weaponizing Phase: Living Off the Land Technique · Hakin9 · http://web.archive.org/web/20260612031857/https://hakin9.org/product/weaponization-unveiled-navigating-stage-two/ (archived copy — publisher removed the live page)
 3. Verizon Telecommunication Network in Boston · IEEE Xplore, document 10210182, 2023 · https://ieeexplore.ieee.org/document/10210182
 4. Hybrid Cloud: The New Generation of Indian Education Society · IRJET, Vol. 7, Issue 9, 2020 · https://www.irjet.net/archives/V7/i9/IRJET-V7I9519.pdf
 

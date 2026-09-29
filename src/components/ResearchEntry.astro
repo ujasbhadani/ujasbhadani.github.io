@@ -4,10 +4,11 @@ interface Props {
   venue?: string;
   year?: string;
   link?: string;
+  linkNote?: string;
   group: "published" | "manuscript";
   abstract: string;
 }
-const { title, venue, year, link, group, abstract } = Astro.props;
+const { title, venue, year, link, linkNote, group, abstract } = Astro.props;
 const metaLine =
   group === "manuscript"
     ? "Manuscript"
@@ -26,6 +27,6 @@ const metaLine =
   </summary>
   <div class="panel-body">
     <p>{abstract}</p>
-    {link ? <p><a href={link}>Read the paper</a></p> : null}
+    {link ? <p><a href={link}>Read the paper{linkNote ? ` (${linkNote})` : ""}</a></p> : null}
   </div>
 </details>

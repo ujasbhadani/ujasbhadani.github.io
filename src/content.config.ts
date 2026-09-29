@@ -83,6 +83,7 @@ const research = defineCollection({
     venue: z.string().optional(),
     year: z.string().optional(),
     link: z.string().url().optional(),
+    linkNote: z.string().optional(),
     abstract: z.string(),
   }),
 });
