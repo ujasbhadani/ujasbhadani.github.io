@@ -1,0 +1,65 @@
+# Build the Astro site and deploy it to GitHub Pages via the
+# "GitHub Actions" Pages source (not the legacy branch-deploy mode).
+#
+# Before this workflow can actually deploy, two manual, one-time steps
+# are required in the GitHub repo settings (not done by this file):
+#   1. Settings -> Pages -> Build and deployment -> Source: switch from
+#      "Deploy from a branch" to "GitHub Actions".
+#   2. Settings -> Pages -> Enforce HTTPS: enable it (custom domain
+#      ujasbhadani.com via public/CNAME must already be verified).
+# Until step 1 is done, the deploy job below will fail or be skipped —
+# that is expected, not a bug in this workflow.
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
