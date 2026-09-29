@@ -1,0 +1,72 @@
+---
+const phrases = [
+  "SOX 404(b) ITGC lead",
+  "Security and GRC engineer",
+  "Founder, Crescive.ai",
+  "Building AI for GRC",
+];
+---
+
+<section id="top">
+  <div class="hero">
+    <img
+      class="hero-photo"
+      src="/assets/img/profile-img.jpg"
+      alt="Ujas Bhadani"
+      width="160"
+      height="160"
+    />
+    <div>
+      <h1>Ujas Bhadani</h1>
+      <p class="hero-role">
+        <span id="hero-role-text" class="hero-role-text" data-phrases={JSON.stringify(phrases)}>
+          {phrases[0]}
+        </span>
+      </p>
+      <p class="hero-sub">
+        I run IT general controls programs that pass Big 4 audit, and I build AI that makes that work faster and more defensible.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const el = document.getElementById("hero-role-text");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (el && !reduceMotion) {
+    const phrases: string[] = JSON.parse(el.getAttribute("data-phrases") || "[]");
+    let index = 0;
+
+    // Keep the first phrase fully opaque well past any load-time audit
+    // snapshot, and cap every crossfade well under the ~150ms window where
+    // a contrast audit could sample partial opacity.
+    const FADE_MS = 120;
+    const GAP_MS = 40;
+    const FIRST_DELAY_MS = 6200;
+    const HOLD_MS = 2600;
+
+    function rotate() {
+      el.style.transition = `opacity ${FADE_MS}ms ease-in, transform ${FADE_MS}ms ease-in`;
+      el.style.opacity = "0";
+      el.style.transform = "translateY(4px)";
+      window.setTimeout(() => {
+        index = (index + 1) % phrases.length;
+        el.textContent = phrases[index];
+        el.style.transition = "none";
+        el.style.opacity = "0";
+        el.style.transform = "translateY(-4px)";
+        // Force reflow so the fade-in transition actually runs.
+        void el.offsetWidth;
+        el.style.transition = `opacity ${FADE_MS}ms ease-out, transform ${FADE_MS}ms ease-out`;
+        el.style.opacity = "1";
+        el.style.transform = "translateY(0)";
+      }, FADE_MS + GAP_MS);
+    }
+
+    window.setTimeout(() => {
+      rotate();
+      setInterval(rotate, HOLD_MS);
+    }, FIRST_DELAY_MS);
+  }
+</script>

@@ -1,0 +1,9 @@
+{
+  "order": 3,
+  "group": "published",
+  "title": "Verizon Telecommunication Network in Boston",
+  "venue": "IEEE Xplore, document 10210182",
+  "year": "2023",
+  "link": "https://ieeexplore.ieee.org/document/10210182",
+  "abstract": "Many people believe that the telecoms business is the most profitable sector on the planet. One hundred and ten million homes in the United States have telephones, fifty percent of all households in the United States have access to the internet, and there are over 170 million mobile customers. Since 2004, the annual revenues from long-distance service have been greater than 100 million dollars. The focus of this paper is on the Verizon Telecommunications network in Boston, which is in the United States of America. Verizon Communications Inc. was founded in New York City and incorporated in Delaware. On June 30, 2000, Bell Atlantic Corporation and GTE Corporation merged into a single company. On Monday, July 3, 2000, Verizon shares were first listed for trading under the ticker VZ on the New York Stock Exchange (NYSE). On March 10, 2010, it also began trading under some other symbol on the NASDAQ exchange. This paper contains a detailed view of telecommunication network nodes deployed in Boston, USA. Some of the essential nodes are deployed with the MBRA tool. In addition, I discussed a high-level understanding of topics like network characterization, the adjacency metric, node degrees, the network degree, link robustness, and the ability to remove links (critical links), the spectral radius, node robustness, the ability to remove nodes, blocking nodes that cannot be removed, node centrality, betweeness centrality, and eigenvector centrality."
+}

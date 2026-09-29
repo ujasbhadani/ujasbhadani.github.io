@@ -1,0 +1,26 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CaseStudyHeader from "../../components/CaseStudyHeader.astro";
+import CaseStudyBody from "../../components/CaseStudyBody.astro";
+import LifecycleDiagram from "../../components/LifecycleDiagram.astro";
+
+const caseStudy = await getEntry("caseStudies", "sox-404b-itgc");
+const lifecycle = (await getCollection("lifecycle")).sort((a, b) => a.data.order - b.data.order);
+
+if (!caseStudy) {
+  throw new Error("Missing sox-404b-itgc case study content entry");
+}
+
+const title = "Rebuilding a SOX 404(b) ITGC program to a clean opinion · Ujas Bhadani";
+const description =
+  "Case study: rebuilding a Deloitte-audited SOX 404(b) IT general controls program to a no-material-weakness opinion, with evidence retrieval down 35%.";
+---
+
+<BaseLayout title={title} description={description} path="/work/sox-404b-itgc/">
+  <CaseStudyHeader eyebrow={caseStudy.data.eyebrow} title={caseStudy.data.title} />
+  <LifecycleDiagram steps={lifecycle.map((s) => s.data)} headingLevel={2} />
+  <div style="margin-top: var(--space-8);">
+    <CaseStudyBody blocks={caseStudy.data.blocks} />
+  </div>
+</BaseLayout>

@@ -1,0 +1,66 @@
+{
+  "order": 2,
+  "title": "Security Engineer",
+  "org": "Xponential Fitness, Inc.",
+  "location": "Irvine, CA",
+  "subline": "SOX 404(b) ITGC program lead · external auditor: Deloitte",
+  "dates": "",
+  "groups": [
+    {
+      "label": "SOX 404(b) ITGC program",
+      "bullets": [
+        {
+          "text": "Took over as management's lead for the Deloitte-audited SOX 404(b) IT general controls program after a year that closed with open deficiencies, and rebuilt it end to end: re-scoped top-down from the financial statement line items to the financially relevant applications and infrastructure, redesigned the Risk and Control Matrix against COSO 2013 and PCAOB AS 2201, and walked every key control with its owner so design gaps were fixed before external testing began. The year closed with every prior-year deficiency remediated and a no-material-weakness opinion.",
+          "confirm": true,
+          "confirmNote": "re-scoping and COSO/AS 2201 wording"
+        },
+        {
+          "text": "Owned test of design and test of operating effectiveness across the key controls and in-scope applications covering logical access, change management, IT operations and program development, sized samples to control frequency (two for a quarterly control, twenty-five or more for a daily one), proved each population complete before selecting from it, ran interim testing with a year-end roll-forward, and coordinated auditor reliance so Deloitte could reduce its own re-performance.",
+          "confirm": true
+        },
+        {
+          "text": "Evidence collection had been a manual scramble of screenshots and email threads, so I moved the program into AuditBoard (now Optro) with control-owner assignments, request tracking and evidence pulled straight from source systems, cutting retrieval time 35% and giving auditors one timestamped population for every test."
+        },
+        {
+          "text": "Made user access review the most defensible control in the program: quarterly UAR and privileged-access recertification across ERP, financial reporting, HR and cloud platforms, each population validated for completeness and accuracy before review, reviewer attestation and removals captured in the tool rather than in email, segregation-of-duties conflicts documented, and terminations tested against HR records, which removed the recurring terminated-user and shared-account findings.",
+          "confirm": true
+        },
+        {
+          "text": "Standardized change-management evidence across engineering teams by mapping the SDLC to key controls (ticketed approval, reviewer distinct from author, segregated deployment, emergency changes logged and approved within a defined window) and reconciling deployed changes against the ticket population, which eliminated developer-access-to-production and unlogged-emergency-change exceptions.",
+          "confirm": true
+        },
+        {
+          "text": "Built the SOC 1 Type 2 reliance file for outsourced financial systems: mapped complementary user entity controls to the internal controls that satisfy them, reviewed subservice carve-outs and covered the gap between report period and fiscal year-end with bridge letters, and documented every exception with its impact, so reliance on service organizations held up to auditor challenge.",
+          "confirm": true
+        },
+        {
+          "text": "Ran deficiency evaluation with management and Deloitte, rating each exception on likelihood and magnitude as a control deficiency, significant deficiency or material weakness, testing whether compensating controls actually operated at the precision needed, aggregating by account, assertion and IT system, then driving remediation through POA&Ms with named owners and re-test dates until the log was closed.",
+          "confirm": true,
+          "confirmNote": "classification wording"
+        },
+        {
+          "text": "Control owners were answering the same request three times for SOX, SOC 2 and ISO 27001, so I consolidated the overlapping requirements into one control library and one evidence calendar, letting a single artifact satisfy several frameworks and cutting audit fatigue.",
+          "confirm": true,
+          "confirmNote": "consolidation wording"
+        },
+        {
+          "text": "Built the vendor due-diligence process for the GRC function: risk tiering, security questionnaires, SOC report review and contract security terms, so every third party was evaluated against internal policy, regulatory requirements and business risk before onboarding."
+        },
+        {
+          "text": "Introduced AI into the audit workflow only where it could be evidenced: LLM-assisted pre-screening of change tickets and access-review populations against control criteria before human testing, with prompts, outputs and the tester's own conclusion retained as workpapers because auditors treat AI-generated work product as unreviewed until a person signs it, plus an AI-use policy and a NIST AI RMF-based risk assessment so the tooling itself was auditable.",
+          "confirm": true
+        }
+      ]
+    },
+    {
+      "label": "Security engineering",
+      "bullets": [
+        { "text": "Application code was reaching production without automated security testing, so I integrated SAST and DAST into the CI/CD pipelines with findings routed to the owning team, taking DevSecOps coverage to 80% of services." },
+        { "text": "Spoofed email carrying the company's domain was a live phishing vector, so I deployed SPF, DKIM and DMARC through Cloudflare and moved the policy to enforcement, cutting spoofed mail by 90%." },
+        { "text": "Led endpoint defense on CrowdStrike, tuning detection and automated remediation so roughly 5,000 vulnerabilities a day were mitigated without disrupting business operations." },
+        { "text": "Sensitive data was leaving through email and shared drives with no detection, so I deployed data-loss-prevention controls across Google Workspace and built anomaly detection into the SIEM workflows, closing the gap between the written policy and what was actually caught." },
+        { "text": "Engineering teams were choosing their own authentication and crypto patterns, so I wrote the security requirements for OAuth2 flows, cryptographic standards and API security across the SaaS estate, giving them one standard to build to and be audited against." }
+      ]
+    }
+  ]
+}

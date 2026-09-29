@@ -1,0 +1,16 @@
+{
+  "order": 6,
+  "title": "Graduate Teaching Assistant",
+  "org": "Northeastern University",
+  "location": "Boston, MA",
+  "dates": "",
+  "groups": [
+    {
+      "bullets": [
+        { "text": "Mentored more than 250 graduate students across Network Security Practices, Network Distributed Systems and Foundations of Cybersecurity." },
+        { "text": "Students were learning firewalls and attacks from slides, so I designed and ran hands-on threat-modeling, brute-force, penetration-testing and Palo Alto firewall labs where they performed the attack, found the misconfiguration and fixed it, and could explain the root cause afterwards." },
+        { "text": "Coached students through configuring Palo Alto firewalls, routers, switches, cryptography, VPNs, IDS/IPS and SIEM until they could do it without the lab guide." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "order": 2,
+  "label": "AI governance",
+  "items": [
+    "NIST AI RMF 1.0",
+    "ISO/IEC 42001",
+    "EU AI Act classification",
+    "OWASP Top 10 for LLM applications",
+    "AI system cards",
+    "model gateways with metering and budgets",
+    "prompt-injection defense",
+    "human-approval gates"
+  ]
+}

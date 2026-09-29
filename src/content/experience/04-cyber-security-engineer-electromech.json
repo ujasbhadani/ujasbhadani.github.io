@@ -1,0 +1,19 @@
+{
+  "order": 4,
+  "title": "Cyber Security Engineer",
+  "org": "Electromech",
+  "dates": "",
+  "groups": [
+    {
+      "bullets": [
+        {
+          "text": "Server hardening was a manual runbook applied differently on every build, so I wrote Ansible playbooks that enforced a CIS-aligned baseline automatically, cutting hardening time 27% and making every server identical to the standard.",
+          "confirm": true,
+          "confirmNote": "\"CIS-aligned\""
+        },
+        { "text": "AWS accounts had no central security visibility, so I enabled and tuned IAM, Security Hub, Inspector and CloudTrail with continuous monitoring and owner-assigned remediation, resolving 85% of high-risk findings across the AWS services in use." },
+        { "text": "Threats were only visible after the fact, so I brought SIEM correlation and network segmentation together for prevention and visibility, so lateral movement was blocked by design and the remaining traffic was actually watched." }
+      ]
+    }
+  ]
+}

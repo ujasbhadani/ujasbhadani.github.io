@@ -1,0 +1,205 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import ExperienceEntry from "../components/ExperienceEntry.astro";
+import LifecycleDiagram from "../components/LifecycleDiagram.astro";
+import ResearchEntry from "../components/ResearchEntry.astro";
+import WritingPiece from "../components/WritingPiece.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import AwardTile from "../components/AwardTile.astro";
+import QuoteCard from "../components/QuoteCard.astro";
+import ContactBlock from "../components/ContactBlock.astro";
+
+const experience = (await getCollection("experience")).sort((a, b) => a.data.order - b.data.order);
+const education = (await getCollection("education")).sort((a, b) => a.data.order - b.data.order);
+const lifecycle = (await getCollection("lifecycle")).sort((a, b) => a.data.order - b.data.order);
+const writing = (await getCollection("writing")).sort((a, b) => a.data.order - b.data.order);
+const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
+const research = (await getCollection("research")).sort((a, b) => a.data.order - b.data.order);
+const publishedResearch = research.filter((r) => r.data.group === "published");
+const manuscriptResearch = research.filter((r) => r.data.group === "manuscript");
+const skills = (await getCollection("skills")).sort((a, b) => a.data.order - b.data.order);
+const certifications = (await getCollection("certifications")).sort((a, b) => a.data.order - b.data.order);
+const training = (await getCollection("training")).sort((a, b) => a.data.order - b.data.order);
+const awards = (await getCollection("awards")).sort((a, b) => a.data.order - b.data.order);
+const recommendations = (await getCollection("recommendations")).sort((a, b) => a.data.order - b.data.order);
+
+const title = "Ujas Bhadani · SOX 404(b) ITGC lead and founder of Crescive.ai";
+const description =
+  "Security and GRC engineer leading a Deloitte-audited SOX 404(b) IT general controls program, and founder of Vasan AI (Crescive.ai). Writing on AI in GRC.";
+---
+
+<BaseLayout title={title} description={description} path="/">
+  <Hero />
+
+  <section id="about">
+    <SectionHeader eyebrow="About" heading="About" />
+    <div class="body-copy prose">
+      <p>I am a security and GRC engineer who leads the SOX 404(b) IT general controls program at Xponential Fitness, where Deloitte is the external auditor, and the founder of Vasan AI Technologies, the company behind Crescive.ai. My work sits where audit rigor meets engineering: designing controls that hold up to testing, automating the evidence behind them, and building AI systems that are auditable by construction.</p>
+      <p>Across a decade at Red Hat Academy, Electromech, Bosch and Xponential I moved from Linux hardening and cloud security into zero-trust architecture and secure SDLC, and then into IT audit leadership. That path shapes how I work. I prefer controls enforced in code and databases over controls written in policy, and evidence that regenerates itself over evidence collected by hand.</p>
+      <p>I hold a Master of Science in Cybersecurity and GRC from Northeastern University, publish in IEEE and international security journals, and am certified across CISSP, CRISC, AWS, Red Hat and Cisco. I write about AI in GRC: what changes for auditors when the system under review is a model, and how AI can take the tedious parts of control testing without lowering the bar.</p>
+    </div>
+  </section>
+
+  <span id="resume"></span>
+  <section id="experience">
+    <SectionHeader eyebrow="Experience" heading="Experience" />
+    <div class="timeline">
+      {experience.map((role) => (
+        <ExperienceEntry
+          title={role.data.title}
+          org={role.data.org}
+          location={role.data.location}
+          subline={role.data.subline}
+          dates={role.data.dates}
+          groups={role.data.groups}
+          links={role.data.links}
+        />
+      ))}
+    </div>
+
+    <p class="timeline-group-label" style="margin-top: var(--space-7);">Education</p>
+    <ul class="education-list">
+      {education.map((entry) => (
+        <li>
+          <h3>{entry.data.degree}</h3>
+          <p class="timeline-meta">
+            {[entry.data.org, entry.data.gpa].filter(Boolean).join(" · ")}
+          </p>
+          {entry.data.coursework ? <p class="small">Coursework: {entry.data.coursework}</p> : null}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section id="sox-404b">
+    <SectionHeader eyebrow="SOX 404(b) practice" heading="How I run a SOX 404(b) ITGC program" />
+    <p class="lifecycle-intro">Seven steps, in the order the audit runs. Each one names what I do and the artifact it leaves behind.</p>
+    <LifecycleDiagram steps={lifecycle.map((s) => s.data)} />
+    <p class="lifecycle-closing">
+      The full story of one program rebuild is in the case study. <a href="/work/sox-404b-itgc/">Read the case study</a>.
+    </p>
+  </section>
+
+  <section id="ai-in-grc">
+    <SectionHeader eyebrow="AI in GRC" heading="AI in GRC" />
+    <p class="lifecycle-intro">Three short positions, each with its sources. The Crescive case study is the worked example.</p>
+    <div class="panel-list">
+      {writing.map((piece) => (
+        <WritingPiece title={piece.data.title} paragraphs={piece.data.paragraphs} sources={piece.data.sources} />
+      ))}
+    </div>
+  </section>
+
+  <section id="projects">
+    <SectionHeader eyebrow="Projects" heading="Projects" />
+    <div class="project-grid">
+      {projects.map((project) => (
+        <ProjectCard
+          title={project.data.title}
+          outcome={project.data.outcome}
+          link={project.data.link}
+          tag={project.data.tag}
+        />
+      ))}
+    </div>
+  </section>
+
+  <span id="researchpaper"></span>
+  <section id="research">
+    <SectionHeader eyebrow="Research" heading="Research" />
+    <h3>Published</h3>
+    <div class="panel-list" style="margin-bottom: var(--space-6);">
+      {publishedResearch.map((paper) => (
+        <ResearchEntry
+          title={paper.data.title}
+          venue={paper.data.venue}
+          year={paper.data.year}
+          link={paper.data.link}
+          linkNote={paper.data.linkNote}
+          group={paper.data.group}
+          abstract={paper.data.abstract}
+        />
+      ))}
+    </div>
+    <h3>Manuscripts</h3>
+    <div class="panel-list">
+      {manuscriptResearch.map((paper) => (
+        <ResearchEntry
+          title={paper.data.title}
+          venue={paper.data.venue}
+          year={paper.data.year}
+          link={paper.data.link}
+          linkNote={paper.data.linkNote}
+          group={paper.data.group}
+          abstract={paper.data.abstract}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section id="skills">
+    <SectionHeader eyebrow="Skills and certifications" heading="Skills and certifications" />
+    <div class="skills-groups">
+      {skills.map((group) => (
+        <div class="skills-group">
+          <h3>{group.data.label}</h3>
+          <p>{group.data.items.join(" · ")}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="certs-block">
+      <h3>Certifications</h3>
+      <ul class="certs-list">
+        {certifications.map((cert) => (
+          <li>{cert.data.link ? <a href={cert.data.link}>{cert.data.name}</a> : cert.data.name}</li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="certs-block">
+      <h3>Training</h3>
+      <ul class="training-list">
+        {training.map((item) => (
+          <li>{item.data.name}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section id="awards">
+    <SectionHeader eyebrow="Awards" heading="Awards" />
+    <div class="award-grid">
+      {awards.map((award) => (
+        <AwardTile name={award.data.name} />
+      ))}
+    </div>
+  </section>
+
+  <span id="recommandations"></span>
+  <section id="recommendations">
+    <SectionHeader eyebrow="Recommendations" heading="Recommendations" />
+    <div class="quote-grid">
+      {recommendations.map((rec) => (
+        <QuoteCard
+          name={rec.data.name}
+          title={rec.data.title}
+          linkedin={rec.data.linkedin}
+          image={rec.data.image}
+          quote={rec.data.quote}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section id="contact">
+    <SectionHeader eyebrow="Contact" heading="Contact" />
+    <p class="prose">
+      If you are standing up or rescuing a SOX 404(b) ITGC program, evaluating AI for your GRC function, or want to talk about how Crescive is built, I would like to hear from you.
+    </p>
+    <ContactBlock />
+  </section>
+</BaseLayout>

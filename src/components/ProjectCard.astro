@@ -1,0 +1,16 @@
+---
+interface Props {
+  title: string;
+  outcome: string;
+  link?: string;
+  tag?: string;
+}
+const { title, outcome, link, tag } = Astro.props;
+const Tag = link ? "a" : "div";
+---
+
+<Tag class="project-card" href={link}>
+  <h3>{title}</h3>
+  {tag ? <span class="tag">{tag}</span> : null}
+  <p>{outcome}</p>
+</Tag>

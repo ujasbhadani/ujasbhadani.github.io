@@ -1,0 +1,6 @@
+{
+  "order": 6,
+  "name": "Deficiency evaluation and remediation",
+  "sentence": "Rate each exception on likelihood and magnitude, test whether compensating controls really operate at the precision needed, aggregate by account, assertion and system, and drive fixes through owned POA&Ms with re-test dates.",
+  "artifact": "Deficiency log"
+}

@@ -1,0 +1,9 @@
+{
+  "order": 2,
+  "group": "published",
+  "title": "Weaponizing Phase: Living Off the Land Technique",
+  "venue": "Hakin9",
+  "link": "http://web.archive.org/web/20260612031857/https://hakin9.org/product/weaponization-unveiled-navigating-stage-two/",
+  "linkNote": "archived copy",
+  "abstract": "When it comes to analyzing and preventing cyber assaults, the cyber death chain is a vital foundation to have. The phase of weaponization is the most important of the seven phases since it is the phase that changes the information that has been obtained into a danger that can be easily seen. The objective of this step is to generate malicious payloads that are intended to take advantage of the vulnerabilities that have been discovered in the system that is the target of the attack. The weaponization strategy known as \"Living Of the Land\" (LOTL) is one that deserves special attention. In this approach, the offenders generate their harmful payloads by using normal tools and procedures, which makes detection more difficult. In this research, the complexities of the weaponization phase are investigated, as well as the way in which the LOTL approach improves the concealment and effectiveness of cyber assaults. This highlights the need of developing more sophisticated detection and prevention measures."
+}

@@ -1,0 +1,15 @@
+{
+  "order": 5,
+  "title": "Linux Security Administrator",
+  "org": "Red Hat Academy (Silver Oak Group of Institutes)",
+  "dates": "",
+  "groups": [
+    {
+      "bullets": [
+        { "text": "A mixed estate of Linux and Windows servers had no consistent patch or access policy, so I took over patch management, user accounts and security configuration and put structured patch cycles and access rules in place, improving the servers' security posture by 15%." },
+        { "text": "Colleagues had little exposure to Linux security, so I designed and delivered more than ten hands-on workshops (Linux fundamentals, CLI, SELinux, kernel security, SSH hardening, containers on RHEL) and trained 80+ co-workers in cyber awareness and vulnerability assessment." },
+        { "text": "The academy needed course material aligned to Red Hat's own curriculum, so I developed hands-on coursework for the RHCSA and RHCE tracks that students could run in a lab." }
+      ]
+    }
+  ]
+}

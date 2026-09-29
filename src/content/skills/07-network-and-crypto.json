@@ -1,0 +1,13 @@
+{
+  "order": 7,
+  "label": "Network and crypto",
+  "items": [
+    "TCP/IP, routing (BGP, OSPF, EIGRP)",
+    "VPNs",
+    "TLS",
+    "X.509",
+    "OAuth2",
+    "pfSense/ASA",
+    "IDS/IPS"
+  ]
+}

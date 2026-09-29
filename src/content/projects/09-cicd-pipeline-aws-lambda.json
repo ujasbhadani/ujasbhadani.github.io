@@ -1,0 +1,6 @@
+{
+  "order": 9,
+  "title": "CI/CD pipeline for AWS Lambda",
+  "link": "https://github.com/ujasbhadani/CI-CD-Pipeline-AWS",
+  "outcome": "A pipeline that builds, tests and deploys a Lambda function on every push."
+}

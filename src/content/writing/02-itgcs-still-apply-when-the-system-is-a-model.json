@@ -1,0 +1,13 @@
+{
+  "order": 2,
+  "slug": "itgcs-still-apply-when-the-system-is-a-model",
+  "title": "ITGCs still apply when the system is a model",
+  "paragraphs": [
+    "Logical access, change management, operations. Those domains were written for ERPs, and they map cleanly onto AI agents once you stop thinking of an agent as software and start thinking of it as a user with a job description.",
+    "Logical access: each agent needs its own identity, a defined role, and permissions scoped to the task, with the same provisioning and deprovisioning evidence a human contractor would need. A shared API key used by five agents is a generic account, and it will be written up as one.",
+    "Change management: a prompt, a tool list and a model version are configuration. A change to any of them is a change, with approval, testing and a record of who deployed it.",
+    "Operations: agent runs need logs a person can read, budget and rate limits so a loop cannot run up a bill overnight, and monitoring that distinguishes a failed run from a wrong one.",
+    "PwC's 2026 view is that the agent orchestration layer itself belongs in ITGC scope, which matches what I see in practice: the interesting risk is rarely a single model, it is the plumbing that hands one agent's output to the next without anyone looking. None of this requires new audit theory. It requires applying the theory we have to a new kind of user."
+  ],
+  "sources": "PwC, AI agent interactions and the future of IT general controls: https://www.pwc.nl/en/services/audit-assurance/pwc-accountancy-insights/data-it-and-internal-control/ai-agent-interactions-and-the-future-of-it-general-controls.html · NIST AI Risk Management Framework 1.0: https://www.nist.gov/itl/ai-risk-management-framework"
+}

@@ -1,0 +1,49 @@
+{
+  "slug": "crescive",
+  "title": "Crescive: an AI product built with audit gates",
+  "eyebrow": "Case study · Vasan AI Technologies · crescive.ai",
+  "blocks": [
+    {
+      "type": "para",
+      "heading": "The problem",
+      "text": "Brands could not see how ChatGPT, Perplexity, Gemini, Claude and the other answer engines described them, or why a competitor was cited when they were not. The tools that measured it did not act on it, and the tools that acted did not prove anything changed."
+    },
+    {
+      "type": "para",
+      "heading": "What Crescive does",
+      "text": "It measures brand presence across the major answer engines through official provider APIs, diagnoses each losing prompt to a root cause, drafts human-approved fixes, and proves before-and-after lift. It is live at crescive.ai with self-serve plans and a free trial."
+    },
+    {
+      "type": "para",
+      "heading": "Architecture in one paragraph",
+      "text": "A Next.js front end and a Python measurement worker on AWS ECS Fargate sit behind a metered, cached, budgeted model gateway. Data lives in Supabase Postgres, where tenant isolation, seat limits and plan protections are enforced by row-level security in the database rather than by application code alone. Every schema change is gated by a structural review before it ships."
+    },
+    {
+      "type": "para",
+      "heading": "The operating model",
+      "text": "The product is built by a roster of AI specialists, each with a defined role, task-scoped tools and an auditable activity trail: architect, backend, frontend, database engineer, QA sentinel, risk officer, pentest engineer, legal counsel and others. A project manager plans every task before any code is written. QA must pass before a task closes, and the Risk Officer signs off on anything touching authentication, tenant isolation or credentials. Commit discipline is enforced by hooks, and every architectural decision is written down as a decision record."
+    },
+    {
+      "type": "list",
+      "heading": "What \"auditable by construction\" means in practice",
+      "ordered": false,
+      "items": [
+        { "text": "Access is role-scoped: a role-to-permission matrix is enforced server-side, and the corporate privilege plane is separate from tenant access." },
+        { "text": "Privileged access is time-boxed and reason-required: an admin opening a customer workspace gets a capped session, must state why, and the access lands in two audit logs." },
+        { "text": "Secrets are encrypted at rest with envelope encryption, and the public security page maps controls to NIST CSF 2.0 and the OWASP Top 10, with a responsible disclosure policy." },
+        { "text": "Governance was written before launch: an AI system card, evaluation and red-team summaries, NIST AI RMF alignment, EU AI Act classification, a privacy notice, a DPA/SCC package and an AI addendum for enterprise contracts." },
+        { "text": "Marketing claims are commitments: no security claim reaches the site without Risk Officer review, and the automated blog runs a claims checker that rejects invented statistics." }
+      ]
+    },
+    {
+      "type": "para",
+      "heading": "What I would do differently",
+      "text": "Put the structural schema review in place from the first migration rather than after the first drift incident, and write the operating model down before the second specialist is added, not after the fifth."
+    }
+  ],
+  "links": [
+    { "label": "crescive.ai", "url": "https://crescive.ai" },
+    { "label": "crescive.ai/security", "url": "https://crescive.ai/security" },
+    { "label": "vasan.ai", "url": "https://vasan.ai" }
+  ]
+}

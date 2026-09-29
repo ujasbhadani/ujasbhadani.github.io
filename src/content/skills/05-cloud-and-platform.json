@@ -1,0 +1,13 @@
+{
+  "order": 5,
+  "label": "Cloud and platform",
+  "items": [
+    "AWS (IAM, Security Hub, Inspector, CloudTrail, Config, ECS Fargate, Lambda, S3, SQS)",
+    "Azure",
+    "Supabase and Postgres row-level security",
+    "Terraform",
+    "Ansible",
+    "Docker, Kubernetes, OpenShift",
+    "OpenStack"
+  ]
+}

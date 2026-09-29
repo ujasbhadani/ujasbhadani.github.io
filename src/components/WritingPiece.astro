@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  paragraphs: string[];
+  sources: string;
+}
+const { title, paragraphs, sources } = Astro.props;
+
+// Split the sources line on raw URLs so each one renders as a real link,
+// without turning the citation text itself into markup. Two patterns: the
+// global one drives the split, the anchored one (no `g` flag, so no
+// lastIndex state to leak between calls) checks each resulting part.
+const urlSplitPattern = /(https?:\/\/[^\s]+)/g;
+const urlTestPattern = /^https?:\/\//;
+const sourceParts = sources.split(urlSplitPattern);
+---
+
+<details class="panel">
+  <summary>
+    <span>{title}</span>
+    <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </summary>
+  <div class="panel-body">
+    {paragraphs.map((paragraph) => (
+      <p>{paragraph}</p>
+    ))}
+    <p class="panel-sources">
+      Sources:{" "}
+      {sourceParts.map((part) =>
+        urlTestPattern.test(part) ? <a href={part}>{part}</a> : part
+      )}
+    </p>
+  </div>
+</details>

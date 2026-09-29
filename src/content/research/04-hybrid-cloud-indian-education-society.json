@@ -1,0 +1,9 @@
+{
+  "order": 4,
+  "group": "published",
+  "title": "Hybrid Cloud: The New Generation of Indian Education Society",
+  "venue": "IRJET, Vol. 7, Issue 9",
+  "year": "2020",
+  "link": "https://www.irjet.net/archives/V7/i9/IRJET-V7I9519.pdf",
+  "abstract": "Cloud computing is a booming technology. There are four types of cloud models available for use. Such as Community Cloud, Public Cloud, Private Cloud, Hybrid Cloud. Every organization is moving toward opensource and cloud computing. Then the question arises, why don't we apply this method to our Indian education society? So, this review paper has all answers, including how you can deploy a hybrid cloud model for your institute. Hybrid cloud act as a bridge between education society and learners. It delivers all the required resources to students while maintaining proper privacy. This article's flow is organized as follows: Firstly, a brief introduction of cloud computing and its model, followed by cloud computing in education society, security algorithms, and finally, deployment of a hybrid cloud."
+}

@@ -1,0 +1,7 @@
+{
+  "order": 6,
+  "title": "AI-assisted control testing pilot",
+  "tag": "pilot",
+  "outcome": "An LLM screens change tickets against the change-management control criteria (approval present, reviewer distinct from author, deployment ticket linked) and flags exceptions for a human tester, with every prompt and verdict retained as a workpaper. The model pre-screens; the tester concludes.",
+  "confirm": true
+}

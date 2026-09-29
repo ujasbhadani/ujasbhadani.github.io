@@ -1,0 +1,15 @@
+{
+  "order": 6,
+  "label": "Engineering",
+  "items": [
+    "Python",
+    "TypeScript and Next.js",
+    "SQL",
+    "Shell",
+    "YAML",
+    "Git and GitHub Actions",
+    "CI/CD with SAST/DAST",
+    "Linux (RHEL, Ubuntu, Kali)",
+    "Windows"
+  ]
+}
