@@ -19,7 +19,7 @@ const description =
 
 <BaseLayout title={title} description={description} path="/work/sox-404b-itgc/">
   <CaseStudyHeader eyebrow={caseStudy.data.eyebrow} title={caseStudy.data.title} />
-  <LifecycleDiagram steps={lifecycle.map((s) => s.data)} />
+  <LifecycleDiagram steps={lifecycle.map((s) => s.data)} headingLevel={2} />
   <div style="margin-top: var(--space-8);">
     <CaseStudyBody blocks={caseStudy.data.blocks} />
   </div>

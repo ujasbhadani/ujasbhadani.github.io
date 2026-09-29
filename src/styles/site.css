@@ -535,6 +535,7 @@ p {
   }
 }
 
+.lifecycle-step h2,
 .lifecycle-step h3 {
   font-size: 1rem;
 }
@@ -692,7 +693,7 @@ a.project-card:focus-visible {
   margin-bottom: var(--space-7);
 }
 
-.case-block h3 {
+.case-block h2 {
   margin-bottom: var(--space-3);
 }
 

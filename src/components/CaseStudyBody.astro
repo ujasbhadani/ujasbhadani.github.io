@@ -24,7 +24,7 @@ const { blocks } = Astro.props;
 <div class="prose">
   {blocks.map((block) => (
     <div class="case-block">
-      {block.heading ? <h3>{block.heading}</h3> : null}
+      {block.heading ? <h2>{block.heading}</h2> : null}
       {block.type === "para" ? (
         <p>{block.text}</p>
       ) : block.ordered ? (

@@ -6,8 +6,14 @@ interface Step {
 }
 interface Props {
   steps: Step[];
+  /** Heading level for each step name. Defaults to h3 (nested under this
+   * section's own h2 on the home page). The SOX case-study page reuses this
+   * component directly under its h1 with no intervening h2, so it passes
+   * headingLevel={2} there to keep heading order sequential. */
+  headingLevel?: 2 | 3;
 }
-const { steps } = Astro.props;
+const { steps, headingLevel = 3 } = Astro.props;
+const HeadingTag = headingLevel === 2 ? "h2" : "h3";
 ---
 
 <div class="lifecycle-wrap" style="position: relative;">
@@ -33,7 +39,7 @@ const { steps } = Astro.props;
     {steps.map((step, i) => (
       <li class="lifecycle-step">
         <span class="lifecycle-step-number" aria-hidden="true">{i + 1}</span>
-        <h3>{step.name}</h3>
+        <HeadingTag>{step.name}</HeadingTag>
         <p class="small">{step.sentence}</p>
         <p class="lifecycle-artifact">Artifact: {step.artifact}</p>
       </li>
