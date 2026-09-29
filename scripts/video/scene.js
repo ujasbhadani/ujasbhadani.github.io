@@ -48,14 +48,22 @@ void main(){
   float sp=4.2*log(max(r,.02)/R0);
   float d=r-R0;
   // three layers, integer revolutions per loop => seamless
+  vec3 tc=vec3(cos(phi),sin(phi),0.);
+  float w1=vn(vec3(cos(a),sin(a),r*14.)*vec3(2.2,2.2,1.)+tc*.9+5.)-.5;
+  float w2=vn(vec3(cos(a),sin(a),r*40.)*vec3(4.5,4.5,1.)+tc*1.3+11.)-.5;
+  float w3=vn(vec3(cos(a),sin(a),r*95.)*vec3(9.,9.,1.)+tc*.6+23.)-.5;
+  float wr=w1*1.6+w2*.9+w3*.45;
+  float a0=a; a+=wr; // angular domain warp: streaks break and braid
   float aA=a+sp-phi*1.;
   float aB=a+sp*.8+phi*2.;   // inner counter-rotating shimmer
   float aC=a+sp*1.3-phi*1.;
   float f1=fil(aA,r,1.5,230.,1.3);
   float f2=fil(aB,r,2.0,380.,8.8);
   float f3=fil(aC,r,1.1,110.,4.1);
-  float streak=pow(smoothstep(.5,.82,f1),1.6)*1.1+pow(smoothstep(.55,.85,f2),1.6)*.9+pow(smoothstep(.45,.8,f3),1.5)*.7;
-  float outer=exp(-max(d,0.)/.07)*1.3+exp(-max(d,0.)/.28)*.36+exp(-max(d,0.)/.7)*.08;
+  float ring=.12+smoothstep(.3,.7,vn(vec3(r*85.,3.1,1.)))*.8+smoothstep(.4,.8,vn(vec3(r*33.,7.7,2.)))*.5;
+  float streak=ring*(pow(smoothstep(.5,.82,f1),1.6)*1.1+pow(smoothstep(.55,.85,f2),1.6)*.9+pow(smoothstep(.45,.8,f3),1.5)*.7);
+  float dd=max(d,0.);
+  float outer=(exp(-dd/.06)*1.3+exp(-dd/.2)*.4)*exp(-pow(dd/.3,2.));
   float gate=smoothstep(.25,.75,fil(a-phi*1.+sp*.6,r,1.2,9.,17.));
   float I=outer*(.03+streak*1.3*(.25+.9*gate));
   float outerMask=smoothstep(-.02,.012,d);
@@ -66,11 +74,12 @@ void main(){
   // bright thin photon ring
   I+=exp(-abs(d+.004)*abs(d+.004)/.00005)*1.0;
   // doppler asymmetry: lower-left brighter, fixed in screen space
-  I*=1.+.65*cos(a+2.4);
+  float dop=.5+.5*cos(a0+2.4);
+  I*=mix(.35,1.9,dop*dop*(3.-2.*dop));
   // horizon
   float hz=smoothstep(R0*.55,R0*.98,r); float dark=mix(.02,1.,hz);
   I*=mix(hz,1.,.0)*1.;
-  col+=ramp(I)*smoothstep(0.,.05,I)*dark;
+  col+=ramp(I*mix(.8,1.25,dop))*smoothstep(0.,.05,I)*dark;
   // bottom fade / vignette
   float v=smoothstep(.12,.62,uv.y); col*=mix(.0,1.,v*v);
   col*=1.-.35*pow(abs(uv.x-.5)*2.,2.);
