@@ -1,6 +1,5 @@
 # build output
 dist/
-.astro/
 
 # dependencies
 node_modules/
@@ -13,3 +12,7 @@ npm-debug.log*
 
 # editor
 .vscode/
+
+# SSR bundle used by the prerender step
+.ssr/
+.vite/

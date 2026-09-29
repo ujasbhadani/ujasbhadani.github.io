@@ -1,6 +1,6 @@
 // Generates public/favicon.png (64x64), public/apple-touch-icon.png (180x180)
 // and public/favicon.ico (32x32 PNG payload saved with the .ico extension --
-// accepted by every current browser) before `astro build` runs, so the
+// accepted by every current browser) before `vite build` runs, so the
 // favicon files always exist after a clean `npm run build` without relying
 // on git history. Source is the old site's headshot-crop icon, recovered
 // once from git history (commit 7de21e7:assets/img/favicon.png) and
