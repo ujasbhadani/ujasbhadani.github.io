@@ -1,0 +1,14 @@
+{
+  "order": 4,
+  "label": "Security operations",
+  "items": [
+    "CrowdStrike",
+    "SIEM and anomaly detection",
+    "DLP (Google Workspace)",
+    "GreenBone",
+    "Cloudflare (SPF/DKIM/DMARC)",
+    "JumpCloud",
+    "Automox",
+    "Wireshark, Nmap, Snort, Metasploit"
+  ]
+}

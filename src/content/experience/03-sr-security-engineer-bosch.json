@@ -1,0 +1,18 @@
+{
+  "order": 3,
+  "title": "Sr. Security Engineer",
+  "org": "Bosch Home Comfort",
+  "location": "Watertown, MA",
+  "dates": "",
+  "groups": [
+    {
+      "bullets": [
+        { "text": "Corporate and cloud networks still trusted anything inside the perimeter, so I led the move to a zero-trust architecture using a CNAPP platform and an IAM role-to-profile design that gave each workload and person only the access its job required, shrinking the blast radius of any single compromised credential." },
+        { "text": "Vulnerability scanning was inconsistent across product teams, so I ran GreenBone scanning as a shared service with per-team ownership and prioritization, raising coverage across the product portfolio while cutting the effort teams spent on triage by 40%." },
+        { "text": "Compliance checks happened after deployment, so I transitioned cloud security from checklist reviews to infrastructure-as-code and policy-as-code guardrails aligned to NIST 800-53, ISO 27001/27002 and OWASP ASVS, so controls were enforced at deploy time and their evidence was generated automatically." },
+        { "text": "Product teams were shipping without a threat model, so I embedded threat modeling and secure-SDLC checkpoints into their development workflow, catching design-level risks before code was written instead of in penetration test reports after release." },
+        { "text": "Identity and patching were spread across disconnected tools, so I consolidated single sign-on on JumpCloud and automated patch management with Automox across the hybrid estate, reducing standing credentials and shortening patch windows." }
+      ]
+    }
+  ]
+}

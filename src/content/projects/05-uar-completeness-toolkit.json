@@ -1,0 +1,7 @@
+{
+  "order": 5,
+  "title": "User access review completeness-and-accuracy toolkit",
+  "tag": "pilot",
+  "outcome": "Scripts that reconcile HR termination records against identity-provider and application user exports, flag accounts active past termination, and produce the population validation an auditor expects before a UAR is accepted.",
+  "confirm": true
+}

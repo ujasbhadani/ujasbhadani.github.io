@@ -1,0 +1,6 @@
+{
+  "order": 3,
+  "name": "Walkthroughs",
+  "sentence": "Sit with each control owner, trace one instance end to end, and fix design gaps before testing starts.",
+  "artifact": "Walkthrough memo and design conclusion"
+}

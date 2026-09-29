@@ -1,0 +1,6 @@
+{
+  "order": 2,
+  "name": "Risk and Control Matrix",
+  "sentence": "Map each ITGC domain (logical access, change management, IT operations, program development) to risks, key controls, frequency, owner and evidence.",
+  "artifact": "RCM aligned to COSO 2013"
+}

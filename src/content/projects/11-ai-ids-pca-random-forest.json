@@ -1,0 +1,5 @@
+{
+  "order": 11,
+  "title": "AI-based intrusion detection with PCA and Random Forest",
+  "outcome": "Tested whether class imbalance degrades IDS training on CIC-IDS-2017 using selective undersampling and SMOTE oversampling."
+}

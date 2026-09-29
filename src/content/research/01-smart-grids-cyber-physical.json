@@ -1,0 +1,9 @@
+{
+  "order": 1,
+  "group": "published",
+  "title": "Smart Grids: A Cyber–Physical Systems Perspective",
+  "venue": "IRJET, Vol. 11, Issue 6",
+  "year": "2024",
+  "link": "https://www.irjet.net/archives/V11/i6/IRJET-V11I6117.pdf",
+  "abstract": "Smart grids are electric networks that use cutting-edge monitoring, controlling, and communication technology to deliver a safe and stable energy supply, improve the efficiency of operation for generators and distributors, and offer consumers various options. The mix of sophisticated physical network systems and cyber systems that make up smart grids presents various technical difficulties. This paper will give a general overview of these difficulties in the context of cyber-physical systems. After that, we'll discuss the potential benefits that cyber-physical systems could provide to smart grids, as well as the difficulties that smart grids pose for these systems. Finally, the effects of recent technological developments on smart grids are addressed."
+}

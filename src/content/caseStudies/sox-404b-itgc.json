@@ -1,0 +1,70 @@
+{
+  "slug": "sox-404b-itgc",
+  "title": "Rebuilding a SOX 404(b) ITGC program to a clean opinion",
+  "eyebrow": "Case study · Xponential Fitness, Inc. · external auditor Deloitte",
+  "blocks": [
+    {
+      "type": "para",
+      "heading": "Context",
+      "text": "Xponential Fitness is a public company, so its internal control over financial reporting is audited under SOX 404(b), with Deloitte issuing the opinion. When I took over the IT general controls side of the program, the prior year had closed with open deficiencies and evidence that lived in email threads and screenshots. Nothing in this write-up names a system beyond its category or repeats an auditor finding verbatim."
+    },
+    {
+      "type": "para",
+      "heading": "Scope",
+      "text": "The four ITGC domains, logical access, change management, IT operations and program development, across the applications and infrastructure that feed the financial statements, for one fiscal year."
+    },
+    {
+      "type": "list",
+      "heading": "What changed",
+      "ordered": true,
+      "items": [
+        {
+          "text": "*Scoping went top-down.* Instead of inheriting last year's list, I started from the financial statement line items and worked down to the applications, databases, operating systems and infrastructure that could cause a material misstatement, with a rationale recorded for every system in and out of scope.",
+          "confirm": true,
+          "confirmNote": "industry-practice wording"
+        },
+        {
+          "text": "*The Risk and Control Matrix was redesigned* against COSO 2013 and PCAOB AS 2201, with each control's frequency, owner, type and evidence named, and the reports it depended on tagged as information produced by the entity.",
+          "confirm": true,
+          "confirmNote": "industry-practice wording"
+        },
+        {
+          "text": "*Walkthroughs came before testing.* Every key control was traced end to end with its owner so design gaps were fixed before anyone pulled a sample."
+        },
+        {
+          "text": "*Evidence moved into AuditBoard (now Optro).* Requests were assigned to control owners, tracked to closure, and pulled from source systems where possible, which cut retrieval time 35% and gave the auditors one timestamped population per test."
+        },
+        {
+          "text": "*User access review became the strongest control.* Populations were validated for completeness and accuracy before review, reviewer attestations and removals were captured in the tool, terminations were tested against HR records, and segregation-of-duties conflicts were documented.",
+          "confirm": true,
+          "confirmNote": "industry-practice wording"
+        },
+        {
+          "text": "*Change management evidence was standardized* across engineering teams: ticketed approval, reviewer distinct from author, segregated deployment, emergency changes logged and approved within a defined window, and deployed changes reconciled against the ticket population.",
+          "confirm": true,
+          "confirmNote": "industry-practice wording"
+        },
+        {
+          "text": "*SOC 1 reliance was documented properly.* Complementary user entity controls were mapped to the internal controls that satisfy them, carve-outs were addressed, and bridge letters covered the gap to year-end.",
+          "confirm": true,
+          "confirmNote": "industry-practice wording"
+        },
+        {
+          "text": "*Deficiencies were evaluated the way the auditor evaluates them:* likelihood and magnitude, compensating controls tested for precision, aggregation by account, assertion and system, and remediation driven through owned POA&Ms with re-test dates.",
+          "confirm": true,
+          "confirmNote": "industry-practice wording"
+        }
+      ]
+    },
+    {
+      "type": "para",
+      "heading": "Outcome",
+      "text": "Every prior-year deficiency was remediated, evidence retrieval time fell 35%, and the year closed with a no-material-weakness opinion."
+    },
+    {
+      "type": "para",
+      "heading": "What I would tell another program lead",
+      "text": "Walk before you test. Prove the population before you sample. Put the evidence where the auditor can see it without asking. And treat AI in the workflow as a first pass that a named person still signs."
+    }
+  ]
+}

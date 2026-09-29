@@ -1,0 +1,6 @@
+{
+  "order": 5,
+  "group": "manuscript",
+  "title": "Fuzzing Neural Networks: Discovering Hidden Failures in AI Systems",
+  "abstract": "This research explores fuzzing techniques for neural networks by generating unexpected, malformed, or adversarial inputs to identify model vulnerabilities, incorrect predictions, and unsafe behaviors. The goal is to improve the robustness, reliability, and security of AI systems."
+}

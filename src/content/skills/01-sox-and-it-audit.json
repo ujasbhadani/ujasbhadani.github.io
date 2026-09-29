@@ -1,0 +1,18 @@
+{
+  "order": 1,
+  "label": "SOX and IT audit",
+  "items": [
+    "SOX 404(a)/(b)",
+    "ITGC and ITAC",
+    "Risk and Control Matrix",
+    "walkthroughs",
+    "TOD/TOE",
+    "sampling and roll-forward",
+    "IPE and key reports",
+    "SOC 1 Type 2 reliance and CUECs",
+    "deficiency evaluation",
+    "COSO 2013",
+    "PCAOB AS 2201",
+    "AuditBoard (now Optro)"
+  ]
+}

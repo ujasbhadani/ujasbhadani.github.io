@@ -1,0 +1,11 @@
+{
+  "order": 3,
+  "slug": "ai-specialists-under-a-risk-officer-gate-how-crescive-is-built",
+  "title": "AI specialists under a Risk Officer gate: how Crescive is built",
+  "paragraphs": [
+    "Crescive is built by a roster of AI specialists, each with a role a person would recognise: architect, backend and frontend developers, database engineer, QA, risk officer, pentest engineer, legal counsel. A project manager plans every task before any code is written. Specialists work in isolated branches with scoped tools. QA must pass before a task closes. Anything that touches authentication, tenant isolation or credentials needs the Risk Officer's sign-off. Schema changes get a structural review. Every decision that changes the architecture is written down as a decision record, and commits are enforced by hooks rather than by memory.",
+    "This is the operating model of an audited engineering organisation, applied to agents. It is slower than letting one model write everything. It is also the reason a control I would test at a client exists in my own company: access is role-scoped, changes are reviewed by someone other than the author, and there is a log for every privileged action.",
+    "When people ask whether AI can be trusted to build software, my answer is that the question is the same as for people. Not on trust. On controls."
+  ],
+  "sources": "the Crescive case study on this site · Crescive security page: https://crescive.ai/security"
+}

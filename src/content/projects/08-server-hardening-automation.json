@@ -1,0 +1,6 @@
+{
+  "order": 8,
+  "title": "Server hardening automation",
+  "link": "https://github.com/ujasbhadani/Server-Hardening-Automation",
+  "outcome": "Ansible playbooks that harden a Linux server to a consistent baseline, 27% faster than the manual runbook."
+}

@@ -1,0 +1,15 @@
+{
+  "order": 3,
+  "label": "Frameworks and standards",
+  "items": [
+    "NIST CSF 2.0",
+    "NIST SP 800-53 Rev 5",
+    "NIST SP 800-37",
+    "ISO 27001:2022 / 27002",
+    "SOC 2",
+    "PCI DSS 4.0",
+    "CIS Benchmarks",
+    "OWASP ASVS and Top 10",
+    "MITRE ATT&CK"
+  ]
+}

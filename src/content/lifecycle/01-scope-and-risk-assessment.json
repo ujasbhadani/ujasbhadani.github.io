@@ -1,0 +1,8 @@
+{
+  "order": 1,
+  "name": "Scope and risk assessment",
+  "sentence": "Identify financially relevant applications, databases, operating systems and infrastructure from the financial statement line items down.",
+  "artifact": "In-scope system inventory with rationale",
+  "confirm": true,
+  "confirmNote": "the whole lifecycle describes work the founder personally leads"
+}

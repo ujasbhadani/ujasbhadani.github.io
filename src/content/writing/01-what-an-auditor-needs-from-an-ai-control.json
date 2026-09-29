@@ -1,0 +1,12 @@
+{
+  "order": 1,
+  "slug": "what-an-auditor-needs-from-an-ai-control",
+  "title": "What an auditor needs from an AI control",
+  "paragraphs": [
+    "An AI control is any control where a model does part of the work: screening change tickets, drafting a review, flagging unusual access. Auditors do not care that the model is clever. They care about the same four things they care about for any control: can I see the population it ran over, can I see what it decided, can I tie each decision to a person who is accountable for it, and can I re-perform a sample.",
+    "COSO's 2026 guidance on internal control over generative AI puts the building blocks in plain terms: access restrictions and acceptable-use policies, input validation, prompt governance treated as configuration change management, output validation with exception handling, logging that makes every run traceable, and monitoring for drift.",
+    "Translated into workpapers, that means the prompt is version-controlled and approved like a configuration change; the model's output is retained together with the input it saw; a named tester records their own conclusion rather than forwarding the model's; and the exception rate is watched over time so a model that quietly stops flagging is caught.",
+    "If a team cannot produce those four things, the control is a convenience, not a control. If it can, the model is doing what a good junior tester does: the tedious first pass, with a reviewer who signs."
+  ],
+  "sources": "COSO, Achieving Effective Internal Control over Generative AI (2026), via Deloitte Heads Up: https://dart.deloitte.com/USDART/home/publications/deloitte/heads-up/2026/coso-internal-controls-generative-ai · Protiviti, 2025 SOX compliance trends (auditor posture on generative-AI work product): https://blog.protiviti.com/2025/10/29/calmer-audits-higher-bar-2025-sox-compliance-trends-and-update/"
+}

@@ -1,0 +1,22 @@
+{
+  "order": 1,
+  "title": "Founder",
+  "org": "Vasan AI Technologies, LLC (Crescive.ai)",
+  "dates": "",
+  "groups": [
+    {
+      "bullets": [
+        { "text": "Brands had no way to see how ChatGPT, Perplexity, Gemini, Claude, Grok, Copilot, DeepSeek or Google AI Overviews described them, or why a competitor was cited instead, so I founded Vasan AI and built Crescive, an AI-agent-based Answer Engine Optimization platform that measures brand presence across the major answer engines through official provider APIs, diagnoses each losing prompt to a root cause, drafts human-approved fixes, and proves before-and-after lift. It is live at crescive.ai with self-serve plans and a free trial." },
+        { "text": "Designed the platform to be auditable from the first commit: a Next.js front end and a Python measurement worker on AWS ECS Fargate behind a metered, cached, budgeted model gateway, on Supabase Postgres where tenant isolation, seat limits and plan protections are enforced by row-level security in the database rather than by application code alone, with every schema change gated by a structural review before it ships." },
+        { "text": "Brought an IT auditor's discipline to an AI product: every architectural decision recorded as a decision record, a role-to-permission matrix enforced server-side, a separate corporate privilege plane where admin access to a customer workspace is time-boxed, reason-required and written to two audit logs, envelope encryption for stored customer credentials, and a public security page mapped to NIST CSF 2.0 and the OWASP Top 10 with a responsible disclosure policy." },
+        { "text": "Instead of hiring a large early team, designed a multi-role AI specialist operating model (architect, backend, frontend, database engineer, QA sentinel, risk officer, pentest engineer, legal counsel and others), each agent with a defined role, task-scoped tools and an auditable activity trail, under a project-manager planning gate, mandatory QA and Risk Officer sign-off on security-tagged work, and hook-enforced commit discipline, which took the platform from first commit to a live, self-serve product in its first quarter." },
+        { "text": "Built the AI governance and legal program alongside the product rather than after it: an AI system card, evaluation and red-team summaries, NIST AI RMF alignment and EU AI Act classification, a privacy notice and DPA/SCC package, an AI addendum for enterprise contracts, and a rule that no security claim reaches the marketing site without Risk Officer review." },
+        { "text": "Ran go-to-market as an engineered pipeline: an automated daily blog with a claims checker that rejects invented statistics, every post paired with LinkedIn and Instagram companions, an llms.txt for answer engines, and error monitoring plus an email alerting pipeline with canary tests so failures surface before customers see them." }
+      ]
+    }
+  ],
+  "links": [
+    { "label": "crescive.ai", "url": "https://crescive.ai" },
+    { "label": "vasan.ai", "url": "https://vasan.ai" }
+  ]
+}
