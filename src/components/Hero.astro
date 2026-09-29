@@ -38,21 +38,35 @@ const phrases = [
     const phrases: string[] = JSON.parse(el.getAttribute("data-phrases") || "[]");
     let index = 0;
 
-    setInterval(() => {
-      index = (index + 1) % phrases.length;
+    // Keep the first phrase fully opaque well past any load-time audit
+    // snapshot, and cap every crossfade well under the ~150ms window where
+    // a contrast audit could sample partial opacity.
+    const FADE_MS = 120;
+    const GAP_MS = 40;
+    const FIRST_DELAY_MS = 6200;
+    const HOLD_MS = 2600;
+
+    function rotate() {
+      el.style.transition = `opacity ${FADE_MS}ms ease-in, transform ${FADE_MS}ms ease-in`;
       el.style.opacity = "0";
       el.style.transform = "translateY(4px)";
       window.setTimeout(() => {
+        index = (index + 1) % phrases.length;
         el.textContent = phrases[index];
         el.style.transition = "none";
         el.style.opacity = "0";
         el.style.transform = "translateY(-4px)";
         // Force reflow so the fade-in transition actually runs.
         void el.offsetWidth;
-        el.style.transition = "opacity 380ms ease-out, transform 380ms ease-out";
+        el.style.transition = `opacity ${FADE_MS}ms ease-out, transform ${FADE_MS}ms ease-out`;
         el.style.opacity = "1";
         el.style.transform = "translateY(0)";
-      }, 260);
-    }, 2600);
+      }, FADE_MS + GAP_MS);
+    }
+
+    window.setTimeout(() => {
+      rotate();
+      setInterval(rotate, HOLD_MS);
+    }, FIRST_DELAY_MS);
   }
 </script>
