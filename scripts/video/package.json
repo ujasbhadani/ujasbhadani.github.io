@@ -1,0 +1,7 @@
+{
+  "name": "hero-video-generator",
+  "private": true,
+  "type": "module",
+  "scripts": { "render": "node render.mjs", "encode": "bash encode.sh" },
+  "devDependencies": { "puppeteer-core": "^24.0.0" }
+}
