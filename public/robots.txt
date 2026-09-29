@@ -16,4 +16,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://ujasbhadani.com/sitemap-index.xml
+Sitemap: https://ujasbhadani.com/sitemap.xml

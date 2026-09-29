@@ -1,0 +1,7 @@
+{
+  "paragraphs": [
+    "I am a security and GRC engineer who leads the SOX 404(b) IT general controls program at Xponential Fitness, where Deloitte is the external auditor, and the founder of Vasan AI Technologies, the company behind Crescive.ai. My work sits where audit rigor meets engineering: designing controls that hold up to testing, automating the evidence behind them, and building AI systems that are auditable by construction.",
+    "Across a decade at Red Hat Academy, Electromech, Bosch and Xponential I moved from Linux hardening and cloud security into zero-trust architecture and secure SDLC, and then into IT audit leadership. That path shapes how I work. I prefer controls enforced in code and databases over controls written in policy, and evidence that regenerates itself over evidence collected by hand.",
+    "I hold a Master of Science in Cybersecurity and GRC from Northeastern University, publish in IEEE and international security journals, and am certified across CISSP, CRISC, AWS, Red Hat and Cisco. I write about AI in GRC: what changes for auditors when the system under review is a model, and how AI can take the tedious parts of control testing without lowering the bar."
+  ]
+}
