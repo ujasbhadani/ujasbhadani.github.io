@@ -12,7 +12,7 @@ export function Work() {
       />
       <section aria-label="Projects" className="bg-bg pb-16 md:pb-24">
         <div className="mx-auto max-w-[1200px] px-6 md:px-10 lg:px-16">
-          <ProjectBento items={projects} />
+          <ProjectBento items={projects} headingLevel="h2" />
         </div>
       </section>
     </>

@@ -16,18 +16,38 @@ function RouteEffects() {
   useEffect(() => {
     const isFirst = first.current;
     first.current = false;
-    if (hash) {
-      const id = decodeURIComponent(hash.slice(1));
-      // Two frames: let the new route paint before measuring.
-      const raf = requestAnimationFrame(() =>
-        requestAnimationFrame(() => {
-          const el = document.getElementById(id);
-          if (el) el.scrollIntoView({ block: "start" });
-        }),
-      );
-      return () => cancelAnimationFrame(raf);
+    if (!hash) {
+      if (!isFirst) window.scrollTo(0, 0);
+      return;
     }
-    if (!isFirst) window.scrollTo(0, 0);
+    const id = decodeURIComponent(hash.slice(1));
+    const align = () => document.getElementById(id)?.scrollIntoView({ block: "start", behavior: "instant" });
+
+    // Scroll once after the route paints, then keep the target aligned while late content
+    // (webfonts, images, the loader hand-off) settles. Stops on the first user input.
+    let stopped = false;
+    const stop = () => {
+      stopped = true;
+    };
+    const realign = () => {
+      if (!stopped) align();
+    };
+    const raf = requestAnimationFrame(() => requestAnimationFrame(realign));
+    const inputs = ["wheel", "touchstart", "keydown", "pointerdown"] as const;
+    inputs.forEach((t) => window.addEventListener(t, stop, { passive: true, once: true }));
+    window.addEventListener("load", realign);
+    document.fonts?.ready.then(realign);
+    const ro = new ResizeObserver(realign);
+    ro.observe(document.body);
+    const timer = setTimeout(() => ro.disconnect(), 10000);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(timer);
+      ro.disconnect();
+      window.removeEventListener("load", realign);
+      inputs.forEach((t) => window.removeEventListener(t, stop));
+    };
   }, [pathname, hash]);
 
   return null;

@@ -7,14 +7,15 @@ import { useReducedMotion } from "../hooks/useReducedMotion";
 import type { LifecycleStep } from "../types/content";
 import { Button } from "./Button";
 
+// Tilt only applies from md up, where the cards float in the parallax layout.
 const TILTS = [
-  "-rotate-3",
-  "rotate-2",
-  "rotate-3",
-  "-rotate-2",
-  "rotate-1",
-  "-rotate-1",
-  "rotate-2",
+  "md:-rotate-3",
+  "md:rotate-2",
+  "md:rotate-3",
+  "md:-rotate-2",
+  "md:rotate-1",
+  "md:-rotate-1",
+  "md:rotate-2",
 ] as const;
 
 function StepCard({ step, tilt, onOpen }: { step: LifecycleStep; tilt: string; onOpen: (s: LifecycleStep) => void }) {
@@ -23,7 +24,8 @@ function StepCard({ step, tilt, onOpen }: { step: LifecycleStep; tilt: string; o
       type="button"
       onClick={() => onOpen(step)}
       aria-haspopup="dialog"
-      className={`pointer-events-auto flex w-full max-w-[320px] flex-col justify-between rounded-3xl border border-stroke bg-surface p-4 text-left transition-transform duration-500 hover:z-10 hover:scale-[1.03] hover:rotate-0 focus-visible:scale-[1.03] focus-visible:rotate-0 sm:p-6 md:aspect-square ${tilt}`}
+     
+      className={`pointer-events-auto flex w-full flex-col justify-between rounded-3xl border border-stroke bg-surface p-4 text-left transition-transform duration-500 hover:z-10 hover:scale-[1.03] focus-visible:scale-[1.03] sm:p-6 md:aspect-square md:max-w-[320px] md:hover:rotate-0 md:focus-visible:rotate-0 ${tilt}`}
     >
       <span>
         <span className="font-display text-3xl italic text-[#89AACC] md:text-4xl">
@@ -77,15 +79,15 @@ function Lightbox({ step, onClose }: { step: LifecycleStep; onClose: () => void 
 export function Explorations() {
   const section = useRef<HTMLElement>(null);
   const pin = useRef<HTMLDivElement>(null);
-  const col1 = useRef<HTMLDivElement>(null);
-  const col2 = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
   const [active, setActive] = useState<LifecycleStep | null>(null);
 
   useEffect(() => {
     if (reduced || !section.current || !pin.current) return;
     gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
+    // Pin and parallax only from 768px up; below that the section is static (matchMedia handles resize).
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 768px)", () => {
       ScrollTrigger.create({
         trigger: section.current,
         start: "top top",
@@ -94,34 +96,35 @@ export function Explorations() {
         pinSpacing: false,
       });
       const scrub = { trigger: section.current, start: "top bottom", end: "bottom top", scrub: true };
-      gsap.fromTo(col1.current, { yPercent: 0 }, { yPercent: -12, ease: "none", scrollTrigger: scrub });
-      gsap.fromTo(col2.current, { yPercent: 0 }, { yPercent: -30, ease: "none", scrollTrigger: scrub });
-    }, section);
+      // Odd steps drift slower than even steps; the wrappers (not the tilted cards) carry the transform.
+      const items = section.current!.querySelectorAll<HTMLElement>("[data-parallax]");
+      items.forEach((el) => {
+        const y = el.dataset.parallax === "slow" ? -180 : -330;
+        gsap.fromTo(el, { y: 0 }, { y, ease: "none", scrollTrigger: scrub });
+      });
+    });
     const refresh = () => ScrollTrigger.refresh();
     window.addEventListener("load", refresh);
     document.fonts?.ready.then(refresh);
     return () => {
       window.removeEventListener("load", refresh);
-      ctx.revert();
+      mm.revert();
     };
   }, [reduced]);
-
-  const left = lifecycle.filter((_, i) => i % 2 === 0);
-  const right = lifecycle.filter((_, i) => i % 2 === 1);
 
   return (
     <section
       ref={section}
       aria-labelledby="sox-practice-title"
       id="sox-404b-practice"
-      className={reduced ? "relative bg-bg py-16 md:py-24" : "relative min-h-[300vh] bg-bg"}
+      className={reduced ? "relative bg-bg py-16 md:py-24" : "relative bg-bg py-16 md:min-h-[300vh] md:py-0"}
     >
       <div
         ref={pin}
         className={
           reduced
             ? "relative z-10 mx-auto flex max-w-2xl flex-col items-center px-6 pb-16 text-center"
-            : "relative z-10 flex h-screen flex-col items-center justify-center px-6 text-center"
+            : "relative z-10 flex flex-col items-center px-6 pb-12 text-center md:h-screen md:justify-center md:pb-0"
         }
       >
         <div className="mb-5 flex items-center gap-3">
@@ -148,27 +151,30 @@ export function Explorations() {
         className={
           reduced
             ? "relative mx-auto max-w-[1400px] px-6"
-            : "pointer-events-none absolute inset-0 z-20 mx-auto max-w-[1400px] px-6"
+            : "relative mx-auto max-w-[1400px] px-6 md:pointer-events-none md:absolute md:inset-0 md:z-20"
         }
       >
-        <div
+        <ol
           className={
             reduced
               ? "grid grid-cols-1 gap-6 sm:grid-cols-2"
-              : "grid grid-cols-2 gap-3 pt-[100vh] md:gap-40"
+              : "grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-40 md:gap-y-16 md:pt-[100vh]"
           }
         >
-          <div ref={col1} className="flex flex-col items-center gap-6 md:gap-16">
-            {left.map((s) => (
-              <StepCard key={s.order} step={s} tilt={TILTS[(s.order - 1) % TILTS.length]} onOpen={setActive} />
-            ))}
-          </div>
-          <div ref={col2} className="flex flex-col items-center gap-6 md:gap-16 md:pt-[30vh]">
-            {right.map((s) => (
-              <StepCard key={s.order} step={s} tilt={TILTS[(s.order - 1) % TILTS.length]} onOpen={setActive} />
-            ))}
-          </div>
-        </div>
+          {lifecycle.map((s, i) => (
+            <li
+              key={s.order}
+              data-parallax={reduced ? undefined : i % 2 === 0 ? "slow" : "fast"}
+              className={
+                reduced || i % 2 === 0
+                  ? "flex justify-center"
+                  : "flex justify-center md:-mb-[30vh] md:mt-[30vh]"
+              }
+            >
+              <StepCard step={s} tilt={TILTS[i % TILTS.length]} onOpen={setActive} />
+            </li>
+          ))}
+        </ol>
       </div>
 
       {active ? <Lightbox step={active} onClose={() => setActive(null)} /> : null}

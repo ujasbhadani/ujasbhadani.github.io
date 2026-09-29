@@ -111,7 +111,7 @@ export function Resume() {
             alt="Ujas Bhadani"
             width={720}
             height={614}
-            loading="lazy"
+            fetchPriority="high"
             decoding="async"
             className="w-full max-w-xs rounded-3xl border border-stroke object-cover"
           />

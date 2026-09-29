@@ -8,7 +8,7 @@ const SPANS = ["md:col-span-7", "md:col-span-5", "md:col-span-5", "md:col-span-7
 
 const LABEL = "View";
 
-function CardBody({ project, index }: { project: Project; index: number }) {
+function CardBody({ project, index, Heading }: { project: Project; index: number; Heading: "h2" | "h3" }) {
   const hasLink = Boolean(project.link);
   const internal = project.link?.startsWith("/");
   const titleEl = <span>{project.title}</span>;
@@ -30,7 +30,7 @@ function CardBody({ project, index }: { project: Project; index: number }) {
             {project.tag}
           </span>
         ) : null}
-        <h3 className="font-display text-2xl italic leading-tight text-text-primary md:text-3xl">
+        <Heading className="font-display text-2xl italic leading-tight text-text-primary md:text-3xl">
           {hasLink ? (
             internal ? (
               <Link
@@ -52,7 +52,7 @@ function CardBody({ project, index }: { project: Project; index: number }) {
           ) : (
             titleEl
           )}
-        </h3>
+        </Heading>
         <p className="mt-3 max-w-xl text-sm text-text-primary/85">{project.outcome}</p>
       </div>
 
@@ -73,14 +73,14 @@ function CardBody({ project, index }: { project: Project; index: number }) {
 }
 
 /** Bento grid of project cards. Cards without a link render without an anchor. */
-export function ProjectBento({ items }: { items: Project[] }) {
+export function ProjectBento({ items, headingLevel = "h3" }: { items: Project[]; headingLevel?: "h2" | "h3" }) {
   return (
     <ul className="grid grid-cols-1 gap-5 md:grid-cols-12 md:gap-6">
       {items.map((project, i) => (
         <li key={project.order} className={SPANS[i % SPANS.length]}>
           <Reveal className="h-full">
             <article className="group relative h-full min-h-[340px] overflow-hidden rounded-3xl border border-stroke bg-surface focus-within:ring-2 focus-within:ring-[#89AACC] md:min-h-[420px]">
-              <CardBody project={project} index={i} />
+              <CardBody project={project} index={i} Heading={headingLevel} />
             </article>
           </Reveal>
         </li>
