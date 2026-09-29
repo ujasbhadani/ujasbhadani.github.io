@@ -33,7 +33,7 @@ void main(){
   vec2 frag=gl_FragCoord.xy; vec2 uv=frag/res; float asp=res.x/res.y;
   vec2 c0=vec2(.5,.80);
   vec2 p=vec2((uv.x-c0.x)*asp,(uv.y-c0.y)); p.y/=.9;
-  float r=length(p); float a=atan(p.y,p.x);
+  float r=length(p)/1.35; float a=atan(p.y,p.x);
   float R0=.19;
   // lensing warp of background
   vec2 wp=p*(1.+ .012/(r*r+.02)); vec2 buv=vec2(wp.x/asp+c0.x, wp.y*.9+c0.y);
