@@ -1,3 +1,4 @@
+import { Case } from "../lib/Case";
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { ExternalLink } from "../components/ExternalLink";
@@ -34,7 +35,7 @@ function Section({
         <Reveal className="mb-10">
           <div className="mb-4 flex items-center gap-3">
             <span aria-hidden="true" className="h-px w-8 bg-stroke" />
-            <span className="text-xs uppercase tracking-[0.3em] text-muted">{eyebrow}</span>
+            <span className="text-xs uppercase tracking-[0.3em] text-muted"><Case>{eyebrow}</Case></span>
           </div>
           <h2 id={`${id}-title`} className="text-3xl leading-tight tracking-tight md:text-5xl">
             {title}
@@ -143,7 +144,7 @@ export function Resume() {
               {role.groups.map((group, gi) => (
                 <div key={gi} className="mt-5">
                   {group.label ? (
-                    <h4 className="mb-3 text-xs uppercase tracking-[0.2em] text-[#89AACC]">{group.label}</h4>
+                    <h4 className="mb-3 text-xs uppercase tracking-[0.2em] text-[#89AACC]"><Case>{group.label}</Case></h4>
                   ) : null}
                   <ul className="list-disc space-y-3 pl-5 text-sm leading-relaxed text-text-primary/85 marker:text-[#4E85BF] md:text-[15px]">
                     {group.bullets.map((b) => (
@@ -211,7 +212,7 @@ export function Resume() {
         <dl className="space-y-8">
           {skills.map((g) => (
             <div key={g.order}>
-              <dt className="mb-3 text-xs uppercase tracking-[0.2em] text-[#89AACC]">{g.label}</dt>
+              <dt className="mb-3 text-xs uppercase tracking-[0.2em] text-[#89AACC]"><Case>{g.label}</Case></dt>
               <dd>
                 <Chips items={g.items} />
               </dd>

@@ -1,3 +1,4 @@
+import { Case } from "../lib/Case";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import { useIsoLayoutEffect } from "../hooks/useIsoLayoutEffect";
@@ -62,7 +63,7 @@ export function Hero({ ready }: { ready: boolean }) {
 
       <div className="relative z-10 flex flex-col items-center px-6 pb-24 pt-28 text-center">
         <p className="blur-in mb-8 text-xs uppercase tracking-[0.3em] text-muted">
-          SOX 404(b) · AI in GRC · 2026
+          <Case>SOX 404(b) · AI in GRC · 2026</Case>
         </p>
         <h1 className="name-reveal mb-6 font-display text-6xl italic leading-[0.9] tracking-tight text-text-primary md:text-8xl lg:text-9xl">
           Ujas Bhadani

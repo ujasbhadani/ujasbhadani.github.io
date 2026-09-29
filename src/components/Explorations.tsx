@@ -1,3 +1,4 @@
+import { Case } from "../lib/Case";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
@@ -32,7 +33,7 @@ function StepCard({ step, tilt, onOpen }: { step: LifecycleStep; tilt: string; o
         <span className="mt-2 block text-xs leading-relaxed text-muted md:text-[13px]">{step.sentence}</span>
       </span>
       <span className="mt-4 block text-[11px] uppercase tracking-[0.15em] text-text-primary/70">
-        Artifact: {step.artifact}
+        Artifact: <Case>{step.artifact}</Case>
       </span>
     </button>
   );
@@ -62,7 +63,7 @@ function Lightbox({ step, onClose }: { step: LifecycleStep; onClose: () => void 
         {step.name}
       </h3>
       <p className="mt-4 text-sm leading-relaxed text-text-primary/85 md:text-base">{step.sentence}</p>
-      <p className="mt-4 text-xs uppercase tracking-[0.15em] text-[#89AACC]">Artifact: {step.artifact}</p>
+      <p className="mt-4 text-xs uppercase tracking-[0.15em] text-[#89AACC]">Artifact: <Case>{step.artifact}</Case></p>
       <div className="mt-8">
         <Button variant="pill" onClick={onClose}>
           Close
@@ -125,7 +126,7 @@ export function Explorations() {
       >
         <div className="mb-5 flex items-center gap-3">
           <span aria-hidden="true" className="h-px w-8 bg-stroke" />
-          <span className="text-xs uppercase tracking-[0.3em] text-muted">SOX 404(b) practice</span>
+          <span className="text-xs uppercase tracking-[0.3em] text-muted"><Case>SOX 404(b) practice</Case></span>
           <span aria-hidden="true" className="h-px w-8 bg-stroke" />
         </div>
         <h2 id="sox-practice-title" className="text-4xl leading-[1.05] tracking-tight md:text-6xl">

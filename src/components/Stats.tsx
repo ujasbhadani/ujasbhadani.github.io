@@ -1,3 +1,4 @@
+import { Case } from "../lib/Case";
 import { Reveal } from "./Reveal";
 
 const STATS = [
@@ -34,7 +35,7 @@ export function Stats() {
                   ) : null}
                   {s.value}
                 </p>
-                <p className="mt-4 max-w-xs text-xs uppercase tracking-[0.15em] text-muted">{s.label}</p>
+                <p className="mt-4 max-w-xs text-xs uppercase tracking-[0.15em] text-muted"><Case>{s.label}</Case></p>
               </Reveal>
             </li>
           ))}

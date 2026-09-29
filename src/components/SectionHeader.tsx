@@ -1,3 +1,4 @@
+import { Case } from "../lib/Case";
 import type { ReactNode } from "react";
 import { DisplayHeading } from "../lib/Emphasis";
 import { Reveal } from "./Reveal";
@@ -19,7 +20,7 @@ export function SectionHeader({ eyebrow, heading, sub, action, level = 2, id }: 
       <div>
         <div className="mb-5 flex items-center gap-3">
           <span aria-hidden="true" className="h-px w-8 bg-stroke" />
-          <span className="text-xs uppercase tracking-[0.3em] text-muted">{eyebrow}</span>
+          <span className="text-xs uppercase tracking-[0.3em] text-muted"><Case>{eyebrow}</Case></span>
         </div>
         {level === 1 ? (
           <h1 id={id} className={cls}>

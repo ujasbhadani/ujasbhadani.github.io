@@ -1,3 +1,4 @@
+import { Case } from "../lib/Case";
 import { lifecycle } from "../data";
 
 /** The seven-step SOX 404(b) lifecycle as an ordered list of cards. */
@@ -15,7 +16,7 @@ export function LifecycleList() {
           <h3 className="mt-2 text-base font-medium text-text-primary">{step.name}</h3>
           <p className="mt-2 text-sm leading-relaxed text-text-primary/80">{step.sentence}</p>
           <p className="mt-3 text-[11px] uppercase tracking-[0.15em] text-muted">
-            Artifact: {step.artifact}
+            Artifact: <Case>{step.artifact}</Case>
           </p>
         </li>
       ))}
