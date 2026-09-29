@@ -1,4 +1,4 @@
-# Build the Astro site and deploy it to GitHub Pages via the
+# Build the React + Vite site (prerendered static HTML in dist/) and deploy it to GitHub Pages via the
 # "GitHub Actions" Pages source (not the legacy branch-deploy mode).
 #
 # Before this workflow can actually deploy, two manual, one-time steps
@@ -6,7 +6,8 @@
 #   1. Settings -> Pages -> Build and deployment -> Source: switch from
 #      "Deploy from a branch" to "GitHub Actions".
 #   2. Settings -> Pages -> Enforce HTTPS: enable it (custom domain
-#      ujasbhadani.com via public/CNAME must already be verified).
+#      ujasbhadani.com via dist/CNAME, copied from public/CNAME, must
+#      already be verified).
 # Until step 1 is done, the deploy job below will fail or be skipped —
 # that is expected, not a bug in this workflow.
 
@@ -36,7 +37,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "24"
           cache: npm
 
       - name: Install dependencies
