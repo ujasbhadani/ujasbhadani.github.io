@@ -61,3 +61,6 @@ export function getCaseStudy(slug: string): CaseStudy | undefined {
 export function getWriting(slug: string): WritingPiece | undefined {
   return writing.find((w) => w.slug === slug);
 }
+
+import aboutData from "./about.json";
+export const about: { paragraphs: string[] } = aboutData;
